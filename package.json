@@ -10,10 +10,10 @@
     "nvmrc": "echo $(node -p -e 'require(\"./package\").engines.node.split(\">=\").join(\"\")') > .nvmrc"
   },
   "devDependencies": {
-    "prettier": "2.8.7"
+    "prettier": "3.2.5"
   },
   "engines": {
-    "node": "14.17.1"
+    "node": "20.11.1"
   },
   "repository": {
     "type": "git",
