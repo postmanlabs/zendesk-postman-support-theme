@@ -5325,7 +5325,10 @@ a.nav-link.uber-nav:active {
   .dropdown-col-menu {
     width: 48em;
   }
-
+  
+  .dropdown-col-menu.colWidth {
+    width: 36rem;
+  }
   .dropdown-col {
     margin-bottom: 0px;
   }
@@ -6058,3 +6061,4 @@ p[dir='auto'] {
     transform: translate3d(0, 0, 0);
   }
 }
+
