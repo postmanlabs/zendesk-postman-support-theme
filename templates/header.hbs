@@ -222,15 +222,16 @@
       </li>
     </ul>
     <div class="form-inline my-2 my-lg-0 ms-auto">
-      <a class="button secondary-button mb-2 mb-sm-0" href="/" title="Contact Sales"
+      <a class="button secondary-button mb-2 mb-sm-0" href="https://www.postman.com/pricing/get-started-postman-plans/" title="Contact Sales"
         onClick="ga('send', 'event', 'global-navbar', 'Click', 'contact-sales');">
         Contact Sales
       </a>
-      <a class="button secondary-button d-none nav-sign-in-button mb-2 mb-sm-0" href="/" title="Sign in"
+      <a class="button secondary-button d-none nav-sign-in-button mb-2 mb-sm-0" href="https://identity.getpostman.com/login?continue=https%3A%2F%2Fgo.postman.co%2Fhome" title="Sign in"
         onClick="ga('send', 'event', 'global-navbar', 'Click', 'sign-in');">
         Sign In
       </a>
     <a class="primary-button d-none nav-sign-up-button mb-2 mb-sm-0" title="Register"
+      href="https://identity.getpostman.com/signup"
         onClick="ga('send', 'event', 'global-navbar', 'Click', 'sign-up');" style="white-space: nowrap;">
         Sign Up for Free
       </a>
@@ -243,7 +244,7 @@
 </nav>
 <!-- Support Center Secondary Navbar -->
 <nav class="navbar sticky navbar-expand-lg navbar-light nav-secondary">
-  <a class="navbar-brand" href="/" onClick="ga('send', 'event', 'global-navbar', 'Click', 'support-center-home');">
+  <a class="navbar-brand" href="/" onClick="ga('send', 'event', 'secondary-navbar', 'Click', 'support-center-home');">
     <span class="contextual-home-link nav-link uber-nav">
       Support Center
     </span>
@@ -265,27 +266,35 @@
     <ul class="navbar-nav ms-auto mt-2 mt-sm-0">
       {{#unless signed_in}}
         <li class="nav-item">
-          <a  id="pm-signed-in" class="nav-link uber-nav"
-            href="/hc/en-us/signin?return_to=https%3A%2F%2Fsupport.postman.com%2Fhc%2Fen-us&amp;locale=en-us"
-            onClick="ga('send', 'event', 'global-navbar', 'Click', 'sign-in');">
+          <a id="pm-signed-in" class="nav-link uber-nav"
+            href="/hc/en-us/signin"
+            onClick="ga('send', 'event', 'secondary-navbar', 'Click', 'sign-in');">
             Sign in
           </a>
         </li>
       {{/unless}}
       {{#if signed_in}}
         <li class="nav-item">
-          <a id="pm-signed-in" class="nav-link uber-nav" href="/hc/en-us/profiles/preview"
-            onClick="ga('send', 'event', 'global-navbar', 'Click', 'profile');">
-            Profile
+          <a id="pm-signed-in" class="nav-link uber-nav" href="https://support.postman.com/hc/en-us/requests"
+            onClick="ga('send', 'event', 'secondary-navbar', 'Click', 'my-requests');">
+            My requests
           </a>
         </li>
       {{/if}}
-      <li class="nav-item nav-secondary-last-item">
+      <li class="nav-item">
         <a class="nav-link uber-nav mr-4" target="_blank" rel="noreferrer" href="https://community.postman.com/"
-          onClick="ga('send', 'event', 'global-navbar', 'Click', 'community');">
+          onClick="ga('send', 'event', 'secondary-navbar', 'Click', 'community');">
           Community
         </a>
       </li>
+       {{#if signed_in}}
+        <li class="nav-item nav-secondary-last-item">
+          <a id="pm-signed-out" class="nav-link uber-nav" href="https://support.postman.com/access/logout?return_to=https%3A%2F%2Fsupport.postman.com%2Fhc%2Fen-us"
+            onClick="ga('send', 'event', 'secondary-navbar', 'Click', 'sign-out');">
+            Sign out
+          </a>
+        </li>
+      {{/if}}
     </ul>
     <svg class="nav-search__icon" width="16" height="16" viewBox="0 0 16 16" fill="#6b6b6b" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.87147 9.16437C10.5768 8.30243 11 7.20063 11 6C11 3.23858 8.76142 1 6 1C3.23858 1 1 3.23858 1 6C1 8.76142 3.23858 11 6 11C7.20063 11 8.30243 10.5768 9.16437 9.87147L9.89648 10.6036L9.64648 10.8536L13.5758 14.7829C13.8101 15.0172 14.19 15.0172 14.4243 14.7829L14.7829 14.4243C15.0172 14.19 15.0172 13.8101 14.7829 13.5758L10.8536 9.64648L10.6036 9.89648L9.87147 9.16437ZM6 10C8.20914 10 10 8.20914 10 6C10 3.79086 8.20914 2 6 2C3.79086 2 2 3.79086 2 6C2 8.20914 3.79086 10 6 10Z"></path></svg>
     {{search submit=false instant=settings.instant_search placeholder='Search Postman support center' class='search search-full nav-search__form ml-5 mr-4'}}
