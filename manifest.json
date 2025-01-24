@@ -1,7 +1,7 @@
 {
   "name": "post-zen",
   "author": "Brandon Castillo, Marketing Engineering, Postman.",
-  "version": "1.16.1",
+  "version": "1.17.1",
   "api_version": 2,
   "default_locale": "en-us",
   "settings": [
